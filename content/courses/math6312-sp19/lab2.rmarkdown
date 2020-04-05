@@ -1,7 +1,7 @@
 ---
 title: "Lab 2: Short Tutorial of R Markdown"
 author: ["Jonghyun Yun"]
-lastmod: 2020-04-04T20:06:30-05:00
+lastmod: 2020-04-04T23:38:14-05:00
 tags: ["R Markdown", "LaTeX", "Markdown", "knitr"]
 categories: ["teaching", "math6312"]
 draft: false
@@ -38,7 +38,7 @@ opts_chunk$set(echo=TRUE,
 
 R Markdown has two advantages that are of interest to a researcher. The first is it allows the results of R code to be directly inserted into formatted documents. The second advantage is it is incredibly easy to use. This ease is a result of R Markdown only using a small set of features and this reduces the complexity of the needed commands. This set of features supports the most commonly used formatting, resulting in the ability to create most documents. These features make R Markdown documents easy to write and the process less error prone.
 
-This guide assumes that you are using R Studio, and the source `rmd` file lives at [lab2.rmd](https://wweb.uta.edu/faculty/yunj/course/math6312-sp19/lab2.rmd.txt). After you download it, please rename it to `lab2.rmd`, and open it in R Studio.
+This guide assumes that you are using R Studio, and the source `rmd` file lives at [lab2.Rmd](/courses/math6312-sp19/lab2.Rmd). Download and open it in R Studio.
 
 
 ### Reproducible research {#reproducible-research}

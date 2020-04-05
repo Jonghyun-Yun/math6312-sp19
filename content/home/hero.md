@@ -1,6 +1,6 @@
 +++
 title = "Data Mining"
-lastmod = 2020-04-04T19:52:46-05:00
+lastmod = 2020-04-05T03:54:57-05:00
 draft = false
 weight = 10
 widget = "hero"
@@ -9,7 +9,7 @@ headless = true
 active = true
 
 # Hero image (optional). Enter filename of an image in the `static/img/` folder.
-hero_media = "datamining.png"
+hero_media = "data-mining384.png"
 
 [design.background]
   # Apply a background color, gradient, or image.
@@ -18,7 +18,7 @@ hero_media = "datamining.png"
   #   Any HTML color name or Hex value is valid.
 
   # Background color.
-  # color = "navy"
+  color = "#9DC5D2"
 
   # Background gradient.
   # gradient_start = "#4bb4e3"
@@ -52,4 +52,10 @@ hero_media = "datamining.png"
 #  label = '<a class="js-github-release" href="https://sourcethemes.com/academic/updates" data-repo="gcushen/hugo-academic">Latest release<!-- V --></a>'
 +++
 
-Practical statistical learning using R
+##### Practical Statistical Learning Techniques using R {#practical-statistical-learning-techniques-using-r}
+
+Discover patterns and solve real world data mining challenges.
+
+-   Data Visualization
+-   Clustering
+-   Predicitive modeling
