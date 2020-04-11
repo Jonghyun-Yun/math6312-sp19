@@ -235,14 +235,14 @@ plugins_js  = []
   #   0: No search engine
   #   1: Academic (built-in)
   #   2: Algolia (https://www.algolia.com)
-  engine = 1
+  engine = 2
 
   # Configuration of Algolia search engine.
   # Paste the values from your Algolia dashboard.
   [search.algolia]
-    app_id = ""
-    api_key = ""
-    index_name = ""
+    app_id = "3OCEXUOAW9"
+    api_key = "5d8bf031f4519ede0167256526770d7a"
+    index_name = "math6312.rbind.io"
     show_logo = false
 
 ############################
