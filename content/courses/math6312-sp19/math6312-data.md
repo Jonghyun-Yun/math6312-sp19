@@ -1,7 +1,7 @@
 +++
 title = "MATH 6312: Data Sets"
 author = ["Jonghyun Yun"]
-lastmod = 2020-04-04T20:05:21-05:00
+lastmod = 2020-04-10T20:01:47-05:00
 linkTitle = "Data Sets"
 categories = ["teaching", "data__sets"]
 draft = false
