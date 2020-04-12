@@ -1,6 +1,6 @@
 +++
 title = "Data Mining"
-lastmod = 2020-04-12T02:23:22-05:00
+lastmod = 2020-04-12T02:40:21-05:00
 draft = false
 weight = 10
 widget = "hero"

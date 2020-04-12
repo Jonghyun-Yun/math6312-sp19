@@ -1,6 +1,6 @@
 +++
 title = "Biography"
-lastmod = 2020-04-12T02:23:21-05:00
+lastmod = 2020-04-12T02:40:19-05:00
 draft = false
 weight = 5
 widget = "about"
