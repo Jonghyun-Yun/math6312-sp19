@@ -1,7 +1,7 @@
 ---
 title: "Data Mining"
 author: ["Jonghyun Yun"]
-lastmod: 2020-04-04T20:19:28-05:00
+lastmod: 2020-04-12T02:02:56-05:00
 categories: ["teaching"]
 draft: false
 type: "docs"
@@ -72,3 +72,9 @@ The course is intended for entry-level graduate students who already have some b
 | Week15 | 04/25 | Neural networks                      |         |                                                   |
 | Week16 | 04/30 | Final presentations                  |         |                                                   |
 | Week16 | 05/02 | Final presentations                  |         |                                                   |
+
+
+## Course Syllabus {#course-syllabus}
+
+-   [HTML version]({{< relref "math6312-syllabus" >}})
+-   [PDF version](math6312-syllabus.pdf)

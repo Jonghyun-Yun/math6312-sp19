@@ -1,7 +1,7 @@
 ---
 title: "Lab 1: Introduction to R"
 author: ["Jonghyun Yun"]
-lastmod: 2020-04-04T20:19:30-05:00
+lastmod: 2020-04-12T02:02:58-05:00
 categories: ["teaching"]
 draft: false
 toc: true

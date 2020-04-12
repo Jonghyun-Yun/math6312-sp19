@@ -54,10 +54,13 @@ education:
 #   form "mailto:your-email@example.com" or "#contact" for contact widget.
 
 social:
+- icon: home
+  icon_pack: fas
+  link: https://jyun.rbind.io
 - icon: envelope
   icon_pack: fas
-  link: '#contact'  # For a direct email link, use "mailto:test@example.org".
-# - icon: twitter
+  link: '#contact'  # for a direct email link, use "mailto:test@example.org".
+  # - icon: twitter
   # icon_pack: fab
   # link: https://twitter.com/GeorgeCushen
 # - icon: google-scholar
@@ -80,9 +83,9 @@ email: "jonghyun.yun@gmail.com"
 
 # Organizational groups that you belong to (for People widget)
 #   Set this to `[]` or comment out if you are not using People widget.
-# user_groups:
-# - Researchers
-# - Visitors
+user_groups:
+- Researchers
+- Instructors
 ---
 
 He completed his PhD in the Department of Statistics at University of Illinois at Urbana-Champaign under the guidance of [Dr. Yuguo Chen](https://publish.illinois.edu/yuguo/). Prior to joining UTA, he was an Assistant Professor in the Department of Mathematical Sciences and a core faculty in the Border Biomedical Research Center at the University of Texas at El Paso, from 2015 to 2016. He was a postdoctoral researcher at UT Southwestern Medical Center under the guidance of Drs. [Guanghua Xiao](https://qbrc.swmed.edu/labs/xiaolab/) and [Yang Xie](https://qbrc.swmed.edu/labs/xielab/) from 2012 to 2015.
