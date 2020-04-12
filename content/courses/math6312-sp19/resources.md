@@ -1,7 +1,7 @@
 ---
 title: "Resources"
 author: ["Jonghyun Yun"]
-lastmod: 2020-04-12T02:02:57-05:00
+lastmod: 2020-04-12T02:31:31-05:00
 categories: ["teaching"]
 draft: false
 type: "docs"
