@@ -1,6 +1,6 @@
 +++
 title = "MATH 6312: Syllabus"
-lastmod = 2020-04-04T20:13:23-05:00
+lastmod = 2020-04-12T01:02:41-05:00
 linkTitle = "Syllabus"
 categories = ["teaching"]
 draft = false
@@ -17,7 +17,7 @@ toc = true
 -   Instructor: Jonghyun Yun
 -   Office Telephone Number: x29045
 -   Email Address: "j" dot "yun" at-sign "uta" dot "edu"
--   Course Webpage: <https://math6312-sp19.rind.io>
+-   Course Webpage: <https://math6312.rbind.io>
     -   [Download](math6312-syllabus.pdf) a course syllabus
 -   Office Hours: SEIR 218, Tu/Thu 4:30-5:30 pm or by appointment
 -   Section Information: MATH6312-001: Data Mining
