@@ -1,0 +1,184 @@
+---
+title: "Lab 4: SVD"
+author: ["Jonghyun Yun"]
+lastmod: 2020-04-13T06:36:00-05:00
+tags: ["SVD", "PCA"]
+categories: ["teaching", "math6312"]
+draft: false
+type: "docs"
+toc: true
+menu:
+  "math6312-sp19":
+    identifier: "lab-4-svd"
+    parent: "R Lab"
+    weight: 40
+---
+
+## Read a JPEG image {#read-a-jpeg-image}
+
+JPEG format can be read in R. A colored figure with n by p pixels is converted to 300 by 341 by 3 matrix for each RGB component.
+
+
+```r
+library(jpeg) # package to read/write JPEG
+
+imgurl = "http://math6312.rbind.io/img/cat.jpg"
+tmp <- tempfile()
+download.file(imgurl,tmp,mode="wb")
+img <- readJPEG(tmp)
+file.remove(tmp) # cleanup
+```
+
+```
+## [1] TRUE
+```
+
+```r
+dim(img) # dimension of a image matrix
+```
+
+```
+## [1] 300 341   3
+```
+
+```r
+n = dim(img)[1] # number of rows
+p = dim(img)[2] # number of columns
+```
+
+```text
+trying URL 'http://wweb.uta.edu/faculty/yunj/img/cat.jpg'
+Error in download.file(imgurl, tmp, mode = "wb") :
+  cannot open URL 'http://wweb.uta.edu/faculty/yunj/img/cat.jpg'
+In addition: Warning message:
+In download.file(imgurl, tmp, mode = "wb") :
+  cannot open URL 'https://wweb.uta.edu/faculty/yunj/img/cat.jpg': HTTP status was '404 Not Found'
+Error in readJPEG(tmp) :
+  unable to open /var/folders/47/35cm9bpx23nbn9q369yc31v40000gq/T//RtmpaRwonW/file396748d28098
+[1] FALSE
+Warning message:
+In file.remove(tmp) :
+  cannot remove file '/var/folders/47/35cm9bpx23nbn9q369yc31v40000gq/T//RtmpaRwonW/file396748d28098', reason 'No such file or directory'
+Error: object 'img' not found
+Error: object 'img' not found
+Error: object 'img' not found
+```
+
+The original figure is shown below.<br />
+
+<style>.org-center { margin-left: auto; margin-right: auto; text-align: center; }</style>
+
+<div class="org-center">
+  <div></div>
+
+{{< figure src="https://math6312.rbind.io/img/cat.jpg" >}}
+
+</div>
+
+This image can be considered as a &times; &times; matrix.
+
+
+## Apply SVD on each RBG component {#apply-svd-on-each-rbg-component}
+
+`svd()` is an R function for SVD. It cannot properly decompose 3D matrix, so we apply the function on each compoenent of RBG. `svdimg` is a matrix with the same dimension as that of `img`. We will reconstruct the image using a few terms of the basis representation of **A** (\\(A = \sum\_{i=1} ^r \sigma\_i \mathbf{u}\_i \mathbf{v}\_i'\\)), and put approximated images in `svdimg`.
+
+
+```r
+### apply SVD on matrices (RGB)
+mysvd = list(svd(img[,,1]),svd(img[,,2]),svd(img[,,3]))
+
+### declare a zero matrix having the same dimension as `img'
+svdimg = array(0,dim(img))
+```
+
+
+## Using the first few terms {#using-the-first-few-terms}
+
+The reconstruction is carried out based on \\(\sum\_{i=1} ^l \sigma\_i \mathbf{u}\_i \mathbf{v}\_i'\\) for \\(l ∈ (5, 10, 50)\\). It is a bit difficult to plot a JPEG image with RBG components, so the image is written in JPEG format, saved in your local folder and attached into this document as an external file.
+
+
+```r
+    # reconstruct an image using the first 20 terms obatined from SVD
+l = 20;
+for(k in 1:3){
+  svdimg[,,k] = mysvd[[k]]$u[,1:l] %*% diag(mysvd[[k]]$d[1:l]) %*% t(mysvd[[k]]$v[,1:l])
+}
+svdimg[svdimg < 0] = 0; svdimg[svdimg > 1] = 1
+  plot(c(0, n), c(0, p), bty = "n", type = "n", xlab = "", ylab = "", axes = F)
+rasterImage(svdimg, 0, 0, n, p)
+```
+
+<img src="/courses/math6312-sp19/lab4_files/figure-html/unnamed-chunk-3-1.png" width="672" />
+
+**Question**: Does the approximation with \\(l = 50\\) look good? How many elements do you need to store for this approximation?
+
+
+## Using the last few terms {#using-the-last-few-terms}
+
+The reconstruction is carried out based on \\(\sum\_{i=l} ^{300} \sigma\_i \mathbf{u}\_i \mathbf{v}\_i'\\) for \\(l ∈ (285, 290, 295)\\). Agian, the image is written in JPEG format, and saved in your local folder (`img`).
+
+
+```r
+    # reconstruct an image using the last 280 terms obatined from SVD
+l = 280;
+      for(k in 1:3){
+        svdimg[,,k] = mysvd[[k]]$u[,(n-l):n] %*% diag(mysvd[[k]]$d[(n-l):n]) %*% t(mysvd[[k]]$v[,(n-l):n])
+      }
+  svdimg[svdimg < 0] = 0; svdimg[svdimg > 1] = 1
+plot(c(0, n), c(0, p), bty = "n", type = "n", xlab = "", ylab = "", axes = F)
+  rasterImage(svdimg, 0, 0, n, p)
+```
+
+<img src="/courses/math6312-sp19/lab4_files/figure-html/unnamed-chunk-4-1.png" width="672" />
+
+
+## Working with greyscale images {#working-with-greyscale-images}
+
+Handling greyscale images in R is much much easier, but how to obtain one for a colored image? You take an average of RBG values on each pixel, and those averages are greyscale.
+
+
+```r
+    gimg = (img[,,1]+img[,,2]+img[,,3])/3
+  plot(c(0, n), c(0, p), bty = "n", type = "n", xlab = "", ylab = "", axes = F)
+rasterImage(gimg, 0, 0, n, p)
+```
+
+<img src="/courses/math6312-sp19/lab4_files/figure-html/unnamed-chunk-5-1.png" width="672" />
+
+Again we apply the SVD on this greyscale image matrix `gimg`, and then draw a plot for singular values for _i_ = 1, ..., 50.
+
+
+```r
+mygsvd = svd(gimg)
+plot(mygsvd$d[1:50],type='l',ylab='singular value',xlab='i')
+```
+
+<img src="/courses/math6312-sp19/lab4_files/figure-html/unnamed-chunk-6-1.png" width="672" />
+
+Roughly speaking with larger singular values, \\(\sigma\_i \mathbf{u}\_i \mathbf{v}\_i'\\) contains more useful infomation to reconstruct the image. For \\(i > 20\\), \\(\sigma\_i \approx 0\\), so these singular values do not contribute much. So, let's use the first 20 terms (there is no optimal rule to choose how many terms we should use), and see if it is good enough.
+
+
+```r
+     svdgimg = mygsvd$u[,1:20] %*% diag(mygsvd$d[1:20]) %*% t(mygsvd$v[,1:20])
+svdgimg[svdgimg < 0] = 0; svdgimg[svdgimg > 1] = 1;
+     plot(c(0, n), c(0, p), bty = "n", type = "n", xlab = "", ylab = "", axes = F)
+   rasterImage(svdgimg, 0, 0, n, p)
+```
+
+<img src="/courses/math6312-sp19/lab4_files/figure-html/unnamed-chunk-7-1.png" width="672" />
+
+This example illustrates how we perform the dimension reduction using the SVD. We can extract low-dimensional bases using the SVD, and then explain variabilities in the high-dimensional data (image), but it comes with price (lose some quality of the image).
+
+
+## Apply SVD on each RBG component {#apply-svd-on-each-rbg-component}
+
+`svd()` is an R function for SVD. It cannot properly decompose 3D matrix, so we apply the function on each compoenent of RBG. `svdimg` is a matrix with the same dimension as that of `img`. We will reconstruct the image using a few terms of the basis representation of **A** (\\(A = \sum\_{i=1} ^r \sigma\_i \mathbf{u}\_i \mathbf{v}\_i'\\)), and put approximated images in `svdimg`.
+
+
+```r
+### apply SVD on matrices (RGB)
+mysvd = list(svd(img[,,1]),svd(img[,,2]),svd(img[,,3]))
+
+### declare a zero matrix having the same dimension as `img'
+svdimg = array(0,dim(img))
+```

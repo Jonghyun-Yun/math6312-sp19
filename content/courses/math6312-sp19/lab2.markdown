@@ -1,7 +1,7 @@
 ---
 title: "Lab 2: Short Tutorial of R Markdown"
 author: ["Jonghyun Yun"]
-lastmod: 2020-04-04T23:37:37-05:00
+lastmod: 2020-04-04T23:38:14-05:00
 tags: ["R Markdown", "LaTeX", "Markdown", "knitr"]
 categories: ["teaching", "math6312"]
 draft: false
