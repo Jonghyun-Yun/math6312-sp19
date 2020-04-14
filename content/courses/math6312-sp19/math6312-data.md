@@ -1,7 +1,7 @@
 +++
 title = "MATH 6312: Data Sets"
 author = ["Jonghyun Yun"]
-lastmod = 2020-04-10T20:01:47-05:00
+lastmod = 2020-04-13T20:17:59-05:00
 linkTitle = "Data Sets"
 categories = ["teaching", "data__sets"]
 draft = false
@@ -32,19 +32,18 @@ The `credit` data set displayed in Figure 3.6 of ESL records `balance` (average 
 
 <a id="code-snippet--read-credit"></a>
 ```R
-credit = read.table("https://elearn.uta.edu/bbcswebdav/courses/2178-SELECTED-TOPICS-IN-MATH-90569-001/doc/data/credit.csv",sep=",",head=T,row.names=1)
+credit = read.table("https://math6312.rbind.io/courses/math6312-sp19/data/credit.csv",sep=",",head=T,row.names=1)
 credit$X = NULL
 ```
 
 
-## Breakfast cereals {#breakfast-cereals}
+## Breakfast cereals {#creals}
 
 A data set contains breakfast cereals produced by three different American manufacturers: General Mills (G), Kellogg (K), and Quaker (Q).
 
 <a id="code-snippet--read-cereals"></a>
 ```R
-cereal = data.frame(fread("http://wweb.uta.edu/faculty/yunj/data/jw/T11-9.txt"), row.names=1)
-colnames(cereal) = fread("http://wweb.uta.edu/faculty/yunj/data/jw/T11-9.name.txt", data.table = F)
+cereal = read.table("https://math6312.rbind.io/courses/math6312-sp19/data/T11-9.txt"), row.names=1)
 ```
 
 
@@ -58,7 +57,7 @@ advertising = fread("https://raw.githubusercontent.com/lneisenman/isl/master/dat
 ```
 
 
-## Prostate cancer {#prostate-cancer}
+## Prostate cancer {#prostate_cancer}
 
 Prostate cancer is cancer that begins in tissues of the prostate gland. Located just below the bladder and in front of the rectum, the prostate is the male sex gland responsible for the production of semen. `Prostate cancer data` come from a study that examined the correlation between the level of prostate specific antigen and a number of clinical measures in men who were about to receive a radical prostatectomy.
 
@@ -147,7 +146,7 @@ This data set contains wage and other data for a group of 3000 male workers in t
 
 <a id="code-snippet--read-wage"></a>
 ```R
-Wage = fread("https://elearn.uta.edu/bbcswebdav/courses/2178-SELECTED-TOPICS-IN-MATH-90569-001/doc/data/wage.csv", data.table = 0, drop = 1)
+Wage = fread("https://math6312.rbind.io/courses/math6312-sp19/data/wage.csv", data.table = 0, drop = 1)
 ```
 
 
@@ -181,8 +180,8 @@ The Ladies Professional Golf Association (LPGA) data contains 7 predictors and t
 
 <a id="code-snippet--read-lpga"></a>
 ```R
-lpga.train = fread("https://elearn.uta.edu/bbcswebdav/courses/2178-SELECTED-TOPICS-IN-MATH-90569-001/doc/data/lpga.train.csv")
-lpga.test = fread("https://elearn.uta.edu/bbcswebdav/courses/2178-SELECTED-TOPICS-IN-MATH-90569-001/doc/data/lpga.test.csv")
+lpga.train = fread("https://math6312.rbind.io/courses/math6312-sp19/data/lpga.train.csv")
+lpga.test = fread("https://math6312.rbind.io/courses/math6312-sp19/data/lpga.test.csv")
 
 v.name = c('Player',
            'Rounds',
@@ -297,7 +296,7 @@ A data frame with 1070 observations on the following 18 variables:
 
 <a id="code-snippet--read-oj"></a>
 ```R
-oj = fread("http://wweb.uta.edu/faculty/yunj/data/islr/oj.csv", data.table = 0)
+oj = fread("https://math6312.rbind.io/courses/math6312-sp19/data/oj.csv", data.table = 0)
 ```
 
 
@@ -327,7 +326,7 @@ The data consists of real historical data collected from 2010 & 2011. Employees 
 
 <a id="code-snippet--read-amazon"></a>
 ```R
-dat = read_csv("http://wweb.uta.edu/faculty/yunj/data/kaggle/amazon_access.csv")
+dat = read_csv("https://math6312.rbind.io/courses/math6312-sp19/data/amazon_access.csv")
 ```
 
 

@@ -82,7 +82,7 @@ log(exp(1))
 ```
 
 ```
-## [1] 7.476541
+## [1] 7.100578
 ```
 
 ```r
@@ -98,7 +98,7 @@ rnorm(5) # generate 5 random numbers from N(0,1)
 ```
 
 ```
-## [1] -2.3523905 -1.1861995 -0.9536634  0.7676184 -1.0534510
+## [1]  0.3269402 -0.4449440 -1.2588562  0.2775797  1.7487057
 ```
 
 
@@ -228,7 +228,7 @@ devs
 ```
 
 ```
-## [1]  0.17196003 -0.15259904 -0.08815965  1.21777177  1.03509825
+## [1]  0.1037982 -0.1362802  0.2600429 -0.7230227 -1.8597637
 ```
 
 ```r
@@ -325,7 +325,7 @@ vec1
 ```
 
 ```
-##  [1] 1 1 5 4 4 4 5 3 3 2
+##  [1] 2 1 2 1 1 1 5 2 3 5
 ```
 
 ```r
@@ -333,7 +333,7 @@ vec2
 ```
 
 ```
-##  [1] 1 2 2 5 1 1 2 2 4 4
+##  [1] 3 4 5 5 4 3 3 4 3 3
 ```
 
 ```r
@@ -341,7 +341,7 @@ vec1 + vec2
 ```
 
 ```
-##  [1] 2 3 7 9 5 5 7 5 7 6
+##  [1] 5 5 7 6 5 4 8 6 6 8
 ```
 
 ```r
@@ -349,7 +349,7 @@ vec1^vec2
 ```
 
 ```
-##  [1]    1    1   25 1024    4    4   25    9   81   16
+##  [1]   8   1  32   1   1   1 125  16  27 125
 ```
 
 ```r
@@ -357,7 +357,7 @@ vec1 >= vec2
 ```
 
 ```
-##  [1]  TRUE FALSE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE FALSE FALSE
+##  [1] FALSE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE  TRUE  TRUE
 ```
 
 ```r
@@ -365,7 +365,7 @@ vec1 <= 3
 ```
 
 ```
-##  [1]  TRUE  TRUE FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE
+##  [1]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE  TRUE  TRUE FALSE
 ```
 
 ```r
@@ -374,7 +374,7 @@ vec1 <= 0 | vec1 >= 3
 ```
 
 ```
-##  [1] FALSE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE
+##  [1] FALSE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE  TRUE  TRUE
 ```
 
 ```r
@@ -391,7 +391,7 @@ vec1 == vec2
 ```
 
 ```
-##  [1]  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE
 ```
 
 ```r
@@ -399,7 +399,7 @@ vec1 != vec2
 ```
 
 ```
-##  [1] FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+##  [1]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE  TRUE
 ```
 
 ```r
@@ -422,7 +422,7 @@ vec1
 ```
 
 ```
-##  [1] 1 2 2 5 1 1 2 2 4 4
+##  [1] 3 4 5 5 4 3 3 4 3 3
 ```
 
 ```r
@@ -430,7 +430,7 @@ vec3
 ```
 
 ```
-## [1] 3 3 3 3 5
+## [1] 5 2 2 1 1
 ```
 
 ```r
@@ -438,7 +438,7 @@ vec4
 ```
 
 ```
-## [1] 1 2 3
+## [1] 1 4 2
 ```
 
 ```r
@@ -446,7 +446,7 @@ vec1 + vec3
 ```
 
 ```
-##  [1] 4 5 5 8 6 4 5 5 7 9
+##  [1] 8 6 7 6 5 8 5 6 4 4
 ```
 
 ```r
@@ -454,7 +454,7 @@ vec1 + vec4
 ```
 
 ```
-##  [1] 2 4 5 6 3 4 3 4 7 5
+##  [1] 4 8 7 6 8 5 4 8 5 4
 ```
 
 **Question**: Tell me what's going on. What choices were made by the R developers?
