@@ -1,7 +1,7 @@
 +++
 title = "MATH 6312: Data Sets"
 author = ["Jonghyun Yun"]
-lastmod = 2020-04-13T20:17:59-05:00
+lastmod = 2020-04-13T20:42:30-05:00
 linkTitle = "Data Sets"
 categories = ["teaching", "data__sets"]
 draft = false
@@ -43,7 +43,7 @@ A data set contains breakfast cereals produced by three different American manuf
 
 <a id="code-snippet--read-cereals"></a>
 ```R
-cereal = read.table("https://math6312.rbind.io/courses/math6312-sp19/data/T11-9.txt"), row.names=1)
+cereal = read.table("https://math6312.rbind.io/courses/math6312-sp19/data/T11-9.txt", row.names=1)
 ```
 
 
